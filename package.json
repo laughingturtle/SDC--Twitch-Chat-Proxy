@@ -8,12 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js localhost 3010"
+    "start": "nodemon server/index.js http://127.0.0.1 3010"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-http-proxy": "^1.5.1",
+    "http-proxy-middleware": "^0.19.1",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
