@@ -11,10 +11,10 @@ app.use(express.static(path.join(__dirname, '../src/client')));
 
 const port = process.env.PORT || 3010;
 
-app.use(proxy('/users', {target: 'http://127.0.0.1:3028'}));
-app.use(proxy('/recent-broadcasts', {target: 'http://127.0.0.1:3000'}));
-app.use(proxy('/recent-highlights', {target: 'http://127.0.0.1:3000'}));
-app.use(proxy('/popular-clips', {target: 'http://127.0.0.1:3000'}));
+app.use(proxy('/users', {target: 'http://ec2-54-67-25-149.us-west-1.compute.amazonaws.com:3028'}));
+app.use(proxy('/recent-broadcasts', {target: 'http://ec2-13-56-139-244.us-west-1.compute.amazonaws.com:3000'}));
+app.use(proxy('/recent-highlights', {target: 'http://ec2-13-56-139-244.us-west-1.compute.amazonaws.com:3000'}));
+app.use(proxy('/popular-clips', {target: 'http://ec2-13-56-139-244.us-west-1.compute.amazonaws.com:3000'}));
 
 app.listen(port, () => {
   console.log(`server running at: http://127.0.0.1:${port}`);
