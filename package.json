@@ -16,6 +16,7 @@
     "express-http-proxy": "^1.5.1",
     "http-proxy-middleware": "^0.19.1",
     "newrelic": "^5.6.0",
+    "nodemon": "^1.18.10",
     "pm2": "^3.4.0",
     "styled-components": "^4.1.3"
   },
