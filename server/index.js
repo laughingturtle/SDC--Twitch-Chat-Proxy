@@ -12,11 +12,14 @@ app.use(express.static(path.join(__dirname, '../src/client')));
 
 const port = process.env.PORT || 3010;
 
-app.use(proxy('/users', {target: 'http://54.219.184.162:3028'}));
-app.use(proxy('/recent-broadcasts', {target: 'http://ec2-13-57-36-100.us-west-1.compute.amazonaws.com:3000'}));
-app.use(proxy('/recent-highlights', {target: 'http://ec2-13-57-36-100.us-west-1.compute.amazonaws.com:3000'}));
-app.use(proxy('/popular-clips', {target: 'http://ec2-13-57-36-100.us-west-1.compute.amazonaws.com:3000'}));
-app.use(proxy('/username', {target: 'http://54.183.207.122:3015'}));
+// chat
+app.use(proxy('/users', {target: 'http://52.53.154.238/'}));
+// content
+app.use(proxy('/recent-broadcasts', {target: 'ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
+app.use(proxy('/recent-highlights', {target: 'ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
+app.use(proxy('/popular-clips', {target: 'ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
+// navigation
+app.use(proxy('/username', {target: 'http://ec2-13-56-228-188.us-west-1.compute.amazonaws.com'}));
 
 app.listen(port, () => {
   console.log(`server running at: http://127.0.0.1:${port}`);
