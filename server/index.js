@@ -1,3 +1,4 @@
+var nr = require('newrelic');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -11,11 +12,11 @@ app.use(express.static(path.join(__dirname, '../src/client')));
 
 const port = process.env.PORT || 3010;
 
-app.use(proxy('/users', {target: 'http://ec2-54-67-25-149.us-west-1.compute.amazonaws.com:3028'}));
-app.use(proxy('/recent-broadcasts', {target: 'http://ec2-13-56-195-60.us-west-1.compute.amazonaws.com:3000'}));
-app.use(proxy('/recent-highlights', {target: 'http://ec2-13-56-195-60.us-west-1.compute.amazonaws.com:3000'}));
-app.use(proxy('/popular-clips', {target: 'http://ec2-13-56-195-60.us-west-1.compute.amazonaws.com:3000'}));
-app.use(proxy('/username', {target: 'http://54.153.16.245:3015'}));
+app.use(proxy('/users', {target: 'http://54.219.184.162:3028'}));
+app.use(proxy('/recent-broadcasts', {target: 'http://ec2-13-57-36-100.us-west-1.compute.amazonaws.com:3000'}));
+app.use(proxy('/recent-highlights', {target: 'http://ec2-13-57-36-100.us-west-1.compute.amazonaws.com:3000'}));
+app.use(proxy('/popular-clips', {target: 'http://ec2-13-57-36-100.us-west-1.compute.amazonaws.com:3000'}));
+app.use(proxy('/username', {target: 'http://54.183.207.122:3015'}));
 
 app.listen(port, () => {
   console.log(`server running at: http://127.0.0.1:${port}`);
