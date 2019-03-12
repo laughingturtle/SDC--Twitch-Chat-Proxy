@@ -15,9 +15,9 @@ const port = process.env.PORT || 3010;
 // chat
 app.use(proxy('/users', {target: 'http://52.53.154.238/'}));
 // content
-app.use(proxy('/recent-broadcasts', {target: 'ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
-app.use(proxy('/recent-highlights', {target: 'ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
-app.use(proxy('/popular-clips', {target: 'ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
+app.use(proxy('/recent-broadcasts', {target: 'http://ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
+app.use(proxy('/recent-highlights', {target: 'http://ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
+app.use(proxy('/popular-clips', {target: 'http://ec2-54-67-108-186.us-west-1.compute.amazonaws.com'}));
 // navigation
 app.use(proxy('/username', {target: 'http://ec2-13-56-228-188.us-west-1.compute.amazonaws.com'}));
 
