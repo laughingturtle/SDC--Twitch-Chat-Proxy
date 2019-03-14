@@ -4,11 +4,14 @@ const path = require('path');
 const cors = require('cors');
 //const proxy = require('express-http-proxy');
 var proxy = require('http-proxy-middleware');
+var compression = require('compression')
 const app = require('express')();
 app.use(cors());
 app.use(express.json());
+app.use(compression());
 app.use(express.urlencoded({extended: true }));
 app.use(express.static(path.join(__dirname, '../src/client')));
+
 
 const port = process.env.PORT || 3010;
 
